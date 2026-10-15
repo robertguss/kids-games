@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Guss Games">
+<link rel="manifest" href="manifest.json"><title>Guss Games</title>
+<style>body{margin:0;font-family:system-ui;background:#ffe9a8;text-align:center}h1{font-size:3rem}
+#g{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;padding:24px}
+a{display:block;padding:40px 10px;border-radius:28px;background:#fff;font-size:2rem;text-decoration:none;color:#333;box-shadow:0 6px 0 #0002}</style></head>
+<body><h1>🎮 Guss Games</h1><div id="g"></div>
+<script>fetch('games.json').then(r=>r.json()).then(gs=>{for(const g of gs){const a=document.createElement('a');a.href='games/'+g.slug+'/';a.textContent=g.emoji+' '+g.title;document.getElementById('g').append(a)}})</script></body></html>
